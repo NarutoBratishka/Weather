@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import org.json.JSONObject;
 
 public class Controller {
+    boolean catchedEx = false;
 
     @FXML
     private ResourceBundle resources;
@@ -25,6 +26,9 @@ public class Controller {
 
     @FXML
     private TextField city;
+
+    @FXML
+    private Text info_table;
 
     @FXML
     private Button getData;
@@ -48,18 +52,20 @@ public class Controller {
     private ImageView image;
 
     @FXML
+    private ImageView great;
+
+    @FXML
     void initialize() {
         getData.setOnAction(event -> {
             String getUserCity = city.getText().trim();
 
             if (!getUserCity.equals("")) {
                 String output = getUrlContent("http://api.openweathermap.org/data/2.5/weather?q=" + getUserCity + "&appid=82b797b6ebc625032318e16f1b42c016&units=metric");
-                if (!output.isEmpty()) {
-                    image.setFitHeight(image.getFitHeight()/2);
-                    image.setFitWidth(image.getFitWidth()/2);
-                    image.setX(image.getX() + image.getFitWidth());
-                    image.setY(image.getY() + image.getFitHeight());
+                if (!output.isEmpty() && !catchedEx) {
+                    image.setVisible(false);
+                    great.setVisible(true);
 
+                    info_table.setText("ИНФОРМАЦИЯ:");
                     JSONObject obj = new JSONObject(output);
                     temp_info.setText("Температура: " + obj.getJSONObject("main").getDouble("temp"));
                     temp_feels.setText("Ощущается: " + obj.getJSONObject("main").getDouble("feels_like"));
@@ -68,11 +74,10 @@ public class Controller {
                     pressure.setText("Давление: " + obj.getJSONObject("main").getDouble("pressure"));
                 }
             }
-//            image.setVisible(false);
         });
     }
 
-    private static String getUrlContent(String urlAdress) {
+    private String getUrlContent(String urlAdress) {
         StringBuffer content = new StringBuffer();
 
         try {
@@ -85,9 +90,19 @@ public class Controller {
             while ((line = reader.readLine()) != null) {
                 content.append(line + "\n");
             }
+            catchedEx = false;
             reader.close();
         } catch (Exception e) {
-            System.out.println("Город не найден");
+            catchedEx = true;
+            image.setVisible(true);
+            great.setVisible(false);
+
+            info_table.setText("Город не найден!");
+            temp_info.setText("Температура: ");
+            temp_feels.setText("Ощущается: ");
+            temp_max.setText("Макс.: ");
+            temp_min.setText("Мин.: ");
+            pressure.setText("Давление:");
         }
         return content.toString();
     }

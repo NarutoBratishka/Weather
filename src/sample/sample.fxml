@@ -34,7 +34,7 @@
             <Font name="Comic Sans MS Bold" size="19.0" />
          </font>
       </Button>
-      <Text fill="#ff4a3a" layoutX="39.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ИНФОРМАЦИЯ:" textAlignment="CENTER" wrappingWidth="313.9189453125">
+      <Text fx:id="info_table" fill="#ff4a3a" layoutX="39.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ИНФОРМАЦИЯ:" textAlignment="CENTER" wrappingWidth="313.9189453125">
          <font>
             <Font name="Comic Sans MS Bold" size="40.0" />
          </font>
@@ -64,9 +64,14 @@
             <Font name="Comic Sans MS Bold" size="26.0" />
          </font>
       </Text>
-      <ImageView fx:id="image" fitHeight="182.0" fitWidth="200.0" layoutX="181.0" layoutY="418.0">
+      <ImageView fx:id="image" fitHeight="182.0" fitWidth="200.0" layoutX="181.0" layoutY="418.0" visible="false">
          <image>
             <Image url="@../urgh.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="great" fitHeight="98.0" fitWidth="103.0" layoutX="270.0" layoutY="501.0" visible="false">
+         <image>
+            <Image url="@../great.png" />
          </image>
       </ImageView>
    </children>
