@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="619.0" prefWidth="385.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane prefHeight="88.0" prefWidth="381.0" style="-fx-background-color: #000;">
+         <children>
+            <Text fill="WHITE" layoutX="56.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ПОГОДНИК" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="45.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="city" alignment="CENTER" layoutX="56.0" layoutY="103.0" prefHeight="45.0" prefWidth="269.0" promptText="Введите город" style="-fx-background-color: #333; -fx-border-color: grey; -fx-border-radius: 7; -fx-border-width: 2;">
+         <font>
+            <Font name="Century Gothic Bold" size="21.0" />
+         </font>
+      </TextField>
+      <Button fx:id="getData" alignment="CENTER" layoutX="93.0" layoutY="164.0" mnemonicParsing="false" text="УЗНАТЬ ПОГОДУ">
+         <font>
+            <Font name="Comic Sans MS Bold" size="19.0" />
+         </font>
+      </Button>
+      <Text fill="#ff4a3a" layoutX="39.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ИНФОРМАЦИЯ:" textAlignment="CENTER" wrappingWidth="313.9189453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text fx:id="temp_info" fill="#f8c96a" layoutX="20.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Температура:" wrappingWidth="249.9189453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="32.0" />
+         </font>
+      </Text>
+      <Text fx:id="temp_feels" fill="WHITE" layoutX="20.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ощущается:" wrappingWidth="249.9189453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="temp_max" fill="WHITE" layoutX="20.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Макс:" wrappingWidth="249.9189453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="temp_min" fill="WHITE" layoutX="20.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мин:" wrappingWidth="249.9189453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="pressure" fill="WHITE" layoutX="20.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Давление:" wrappingWidth="249.9189453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="26.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="147.0" fitWidth="104.0" focusTraversable="true" layoutX="270.0" layoutY="462.0">
+         <image>
+            <Image url="@../../../../Users/derevyankin/Рабочий%20стол/image_processing20200508-13712-ehrzx4.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
