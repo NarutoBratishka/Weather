@@ -24,7 +24,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <TextField fx:id="city" alignment="CENTER" layoutX="39.0" layoutY="98.0" prefHeight="63.0" prefWidth="314.0" promptText="Введите город" style="-fx-background-color: #333; -fx-border-color: grey; -fx-border-radius: 7; -fx-border-width: 3;">
+      <TextField fx:id="city" alignment="CENTER" layoutX="39.0" layoutY="98.0" prefHeight="63.0" prefWidth="314.0" promptText="Введите город" style="-fx-background-color: #DDD; -fx-border-color: #777; -fx-border-radius: 7; -fx-border-width: 3; -fx-background-radius: 12;">
          <font>
             <Font name="Century Gothic Bold" size="21.0" />
          </font>
@@ -39,7 +39,7 @@
             <Font name="Comic Sans MS Bold" size="40.0" />
          </font>
       </Text>
-      <Text fx:id="temp_info" fill="#f8c96a" layoutX="20.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Температура:" wrappingWidth="249.9189453125">
+      <Text fx:id="temp_info" fill="#f8c96a" layoutX="21.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Температура:" wrappingWidth="339.9189453125">
          <font>
             <Font name="Comic Sans MS Bold" size="32.0" />
          </font>
